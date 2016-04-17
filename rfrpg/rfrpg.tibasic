@@ -1,0 +1,84 @@
+0->Xmin:94->Xmax:0->Ymin:62->Ymax
+ClrDraw
+Line(5,27,5,35
+Line(5,35,7,37
+Line(6,35,7,36
+Line(5,37,3,39
+Line(3,40,3,41
+Line(7,38,7,39
+Line(7,39,11,39
+Pt-On(12,38
+Line(8,37,19,37
+Line(19,37,19,32
+Line(20,35,21,35
+Line(19,32,9,32
+Line(9,31,9,27
+Line(8,27,6,27
+Line(10,31,10,29
+Line(11,28,15,28
+Line(16,29,16,31
+Pt-On(13,31
+60->B
+Lbl A
+Pt-Off(12,30
+Pt-On(14,30
+B-4->B
+Text(0,0,"Press 2nd to shoot!
+Text(57,17,"By: Jeff Verkoeyen
+For(theta,1,3
+	2->theta
+	getKey->A
+	If A=21
+	3->theta
+End
+Text(0,0,"                                                           
+Pt-Off(14,30
+Pt-On(12,30
+For(theta,23,B
+	Pt-On(theta,35
+	Pt-Off(theta-1,35
+End
+If B=56
+Text(24,54,"G
+If B=52
+Text(24,50,"P
+If B=48
+Text(24,46,"R
+If B=44
+Text(24,42,"F
+If B=40:Then
+	Text(24,38,"R
+	For(theta,1,100
+	End
+	Goto B
+End
+Goto A
+Lbl B
+ClrDraw
+Text(20,30,"R
+For(theta,1,200
+End
+ClrDraw
+Text(20,34,"F
+For(theta,1,200
+End
+ClrDraw
+Text(20,38,"R
+For(theta,1,200
+End
+ClrDraw
+Text(20,42,"P
+For(theta,1,200
+End
+ClrDraw
+Text(20,46,"G
+For(theta,1,200
+End
+ClrDraw
+Text(20,30,"RFRPG!
+Text(34,0,"RAPID-FIRE
+Text(40,10,"ROLE-PLAYING GAME
+Pause 
+ClrDraw:ClrHome
+Output(1,1," 
+Stop

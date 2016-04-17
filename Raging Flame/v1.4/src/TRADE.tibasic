@@ -1,0 +1,63 @@
+:"TRADE STATS RAGING FLAME
+ClrHome
+Disp "PLEASE LINK BOTH","CALCS AND LEAVE","THE OTHER CALC","ON THE HOME","SCREEN"
+Pause 
+ClrHome
+Output(4,3,"TRANSFERRING"
+|LFLAME(1)->|LTRAD(1)
+|LFLAME(2)->|LTRAD(2)
+|LFLAME(3)->|LTRAD(3)
+|LFLAME(4)->|LTRAD(4)
+|LFLAME(5)->|LTRAD(5)
+|LFLAME(6)->|LTRAD(6)
+|LFLAME(7)->|LTRAD(7)
+|LFLAME(8)->|LTRAD(8)
+|LFLAME(9)->|LTRAD(9)
+|LFLAME(10)->|LTRAD(10)
+Get(|LFLAME(1)
+Get(|LFLAME(2)
+Get(|LFLAME(3)
+Get(|LFLAME(4)
+Get(|LFLAME(5)
+Get(|LFLAME(6)
+Get(|LFLAME(7)
+Get(|LFLAME(8)
+Get(|LFLAME(9)
+Get(|LFLAME(10)
+ClrHome
+Output(4,6,"SAVING 
+For(theta,1,200
+End
+ClrDraw:ClrHome
+Text(1,1,"YOUR FRIEND'S STATS ARE-
+Text(7,1,"ATTACK- ",|LFLAME(1)
+Text(13,1,"DEFENSE- ",|LFLAME(2)
+Text(19,1,"SPEED- ",|LFLAME(3)
+Text(25,1,"HEALTH- ",|LFLAME(4),"/",|LFLAME(6)
+Text(31,1,"GOLD- ",|LFLAME(5)
+Text(37,1,"EXPERIENCE LEFT- ",|LFLAME(7)
+Text(43,1,"LEVEL- ",|LFLAME(10)
+Pause 
+ClrDraw
+Text(1,1,"WOULD YOU LIKE TO SWITCH
+Text(7,1,"STATS?"
+Pause 
+Menu("SWITCH","YES",A,"NO",B
+Lbl A
+ClrDraw
+Text(1,1,"WARNING! CHANGE WILL BE
+Text(7,1,"PERMANENT"
+Pause 
+Menu("CONTINUE?","YES",C,"NO",B
+Lbl C
+|LFLAME->|LTRAD
+Pause 
+ClrHome
+Pause "DONE"
+Output(2,1," 
+Stop
+Lbl B
+ClrHome
+|LTRAD->|LFLAME
+Output(1,1," 
+Stop

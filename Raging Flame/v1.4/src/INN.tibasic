@@ -1,0 +1,39 @@
+ClrHome
+Menu("  WELGAR'S INN  ","STAY",A,"TALK",B,"LEAVE",LE
+Lbl A
+If L>3:Then
+	Disp "COST- 55 G PER","NIGHT
+	Pause 
+	ClrHome
+	Menu("     STAY?     ","YES",10,"NO",LE
+	Lbl 10
+	F->D
+	E-55->E
+End
+If L<=3:Then
+	Disp "COST- 40 G PER","NIGHT
+	Pause 
+	ClrHome
+	Menu("     STAY?      ","YES",1,"NO",LE
+	Lbl 1
+	F->D
+	E-40->E
+End
+Disp "HAVE A NICE","REST
+Pause 
+5->theta
+Return
+Lbl B
+Text(1,1,"AY, YES, ME AND BELGAR ARE  
+Text(7,1,"BROTHERS. WE BOTH EVEN HAVE  
+Text(13,1,"HAVE THE SAME ACCENT!
+Text(19,1,"HOWEVER, WE RUN DIFFERENT
+Text(25,1,"SHOPS. OH! THE OTHER DAY,
+Text(31,1,"SOME GUY WAS ASKING FOR YOU
+Text(37,1,"I THINK, BUT I'M NOT SURE...
+Pause 
+5->theta
+Return
+Lbl LE
+5->theta
+Return

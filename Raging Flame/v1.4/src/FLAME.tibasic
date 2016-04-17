@@ -1,0 +1,912 @@
+:"RAGING FLAME
+PlotsOff :ClrDraw:CoordOff:AxesOff:GridOff:Normal:Float:Radian:Func:Connected:Sequential:Real:Full
+Lbl SG
+ClrDraw
+For(theta,1,11
+	ClrDraw
+	RecallPic 4
+	Text(20-theta,15+theta,"RAGING  
+	Text(20-theta,62-theta,"FLAME
+End
+For(theta,1,30
+	Pt-Off(40+theta,76
+	Text(26,50-theta,"JEFF
+	Text(26,6+theta," VERKOEYEN
+End
+Pause 
+Lbl P0
+1->Xmin:100->Xmax:1->Xscl:1->Ymin:100->Ymax:1->Yscl
+ClrDraw:ClrHome
+Text(1,1,"THE YEAR IS 3042, AND A
+Text(7,1,"POWERFUL EXPLOSION HAS
+Text(13,1,"OPENED A PORTAL FROM THE
+Text(19,1,"MEDIEVIL TIMES. AN EVIL
+Text(25,1,"WIZARD AND YOU HAVE BOTH
+Text(31,1,"BEEN BROUGHT TO THIS TIME.
+Text(37,1,"YOU MUST DESTROY THE EVIL
+Text(43,1,"WIZARD BEFORE HE TAKES
+Text(49,1,"CONTROL OF BOTH WORLDS!
+Pause 
+Plot1(Scatter,|LCHAR,|LCHARtheta,plotdot
+PlotsOn 1
+Lbl RF
+Menu("  RAGING FLAME  ","NEW GAME",NG,"LOAD GAME",LG
+Lbl NG
+If |LFLAME(1)>0:Then
+	Menu("ERASE OLD FILE? ","YES",thetaK,"NO",RF
+End
+Lbl thetaK
+ClrHome
+Asm(prgmZALPHA
+Input "NAME?- ",Str1
+1->|LFLAME(15)
+1->|LFLAME(17)
+ClrHome
+Menu("DIFFICULTY LEVEL","EASY",DL,"MEDIUM",LD,"HARD",LO
+Lbl DL
+"EASY"->Str0
+1->|LFLAME(12)
+Goto thetaU
+Lbl LD
+"MEDIUM"->Str0
+2->|LFLAME(12)
+Goto thetaU
+Lbl LO
+"HARD"->Str0
+3->|LFLAME(12)
+Goto thetaU
+Lbl thetaU
+ClrHome
+Menu("     RACE?      ","WARRIOR",WA,"WIZARD",WI
+Lbl WI
+"WIZARD"->Str9
+5->A
+6->B
+2->C
+1->L
+35->D
+100->E
+D->F
+90->G
+0->|LFLAME(16)
+A->|LFLAME(1)
+B->|LFLAME(2)
+C->|LFLAME(3)
+D->|LFLAME(4)
+E->|LFLAME(5)
+F->|LFLAME(6)
+G->|LFLAME(7)
+1->|LFLAME(8)
+L->|LFLAME(10)
+Goto thetatheta
+Lbl WA
+"WARRIOR"->Str9
+7->A
+1->L
+5->B
+1->C
+30->D
+100->E
+D->F
+137->G
+0->|LFLAME(16)
+A->|LFLAME(1)
+B->|LFLAME(2)
+C->|LFLAME(3)
+D->|LFLAME(4)
+E->|LFLAME(5)
+F->|LFLAME(6)
+G->|LFLAME(7)
+1->|LFLAME(8)
+L->|LFLAME(10)
+Goto thetatheta
+Lbl LG
+0->Xmin:100->Xmax:0->Ymin:100->Ymax
+UnArchive [A]
+UnArchive |LFLAME
+Matr>list([A],|LFLAME
+UnArchive |LCHAR
+UnArchive |LCHARtheta
+|LFLAME(1)->A
+|LFLAME(2)->B
+|LFLAME(3)->C
+|LFLAME(4)->D
+|LFLAME(5)->E
+|LFLAME(6)->F
+|LFLAME(7)->G
+|LFLAME(8)->Z
+|LFLAME(9)->R
+|LFLAME(10)->L
+If |LFLAME(12)=1
+"EASY"->Str0
+If |LFLAME(12)=2
+"MEDIUM"->Str0
+If |LFLAME(12)=3
+"HARD"->Str0
+If Z=1
+Goto 1
+If Z=2
+Goto 2
+If Z=3
+Goto 3
+If Z=4
+Goto 4
+If Z=5
+Goto 5
+If Z=6
+Goto 6
+If Z=7
+Goto 7
+If Z=8
+Goto 8
+If Z=9
+Goto 9
+If Z=10
+Goto 10
+If Z=11
+Goto 11
+If Z=12
+Goto 12
+If Z=13
+Goto 13
+If Z=14
+Goto 14
+If Z=15
+Goto 15
+If Z=16
+Goto 16
+If Z=17
+Goto 17
+If Z=18
+Goto 18
+If Z=19
+Goto 19
+Lbl thetatheta
+ClrDraw
+1->|LFLAME(11)
+0->Xmin:100->Xmax:0->Ymin:100->Ymax
+Goto 1
+Lbl 19
+0->theta
+19->Z
+ClrDraw
+PlotsOn 1
+Text(1,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(8,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(15,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(22,1,"VVVVVVVVVVV    VVVVVVVVVVV
+Text(29,1,"VVVVVVVVVVV
+Text(29,49,"VVVVVVVVVVV
+Text(36,1,"VVVVVVVVVVWCVVVVVVVVVVV
+Text(43,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(50,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(57,1,"VVVVVVVVVVVVVVVVVVVVVVV
+prgmBATTLE
+Line(100,0,100,((D/F)*100)
+Lbl S
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=105:Then
+	567->R
+	prgmENCOUNT
+End
+If theta=25
+Goto 18
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto S
+Lbl 18
+0->theta
+18->Z
+ClrDraw
+PlotsOn 1
+Text(1,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(8,1,"VVVVV   MINES OF TULIN   VVVV
+Text(15,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(22,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(29,1,"VVVVVVVVVVV
+Text(29,49,"VVVVVVVVVVV
+Text(36,1,"VVVVVVVVVVV    VVVVVVVVVVV
+Text(43,1,"VVVVVVVVVV        VVVVVVVVVVV
+Text(50,1,"VVVVVVVVVVVVVVVVVVVVVVV
+Text(57,1,"VVVVVVVVVVVVVVVVVVVVVVV
+prgmBATTLE
+Lbl R
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=105
+Goto 17
+If theta=34
+Goto 19
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto R
+Lbl 17
+0->theta
+17->Z
+ClrDraw
+PlotsOn 1
+ClrDraw
+Pt-On(57,50
+Pt-On(56,52
+Pt-On(55,50
+Pt-On(56,48
+Pt-On(57,48
+Pt-On(58,48
+Pt-On(56,46
+Pt-On(55,45
+Pt-On(57,45
+Pt-On(55,49
+Pt-On(54,49
+Text(43,21,"VVVUVVV
+Text(50,21,"VVVVVVV
+Text(57,21,"VVVVVVV
+Text(1,13,"TTT
+Text(8,13,"TCT
+Text(15,13,"T    TT
+Text(22,13,"T
+Text(29,13,"TT
+Text(36,17,"TTTT
+Text(15,29,"VVVVV
+Text(22,29,"VVUVV
+Text(8,29,"VVVVV
+Text(1,29,"VVVVV
+prgmBATTLE
+Lbl Q
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=105:Then
+	prgmENCOUNT
+End
+If theta=24
+Goto 3
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto Q
+Lbl 1
+0->theta
+1->Z
+ClrDraw
+PlotsOn 1
+Text(43,29,"VVVUVVV
+Text(50,29,"VVVVVVV
+Text(57,29,"VVVVVVV
+Text(1,21,"TTT
+Text(8,21,"TCT
+Text(15,21,"T    TT
+Text(22,21,"T
+Text(29,21,"TT
+Text(36,25,"TTTT
+Text(22,37,"VVUVV
+Text(15,37,"VVVVV
+Text(8,37,"VVVVV
+Text(1,37,"VVVVV
+prgmBATTLE
+Lbl A
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 6
+If theta=24
+Goto 4
+If theta=25
+Goto 2
+If theta=26
+Goto 3
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto A
+Lbl 2
+0->theta
+2->Z
+ClrDraw
+PlotsOn 1
+Pt-On(50,61
+Pt-On(49,63
+Pt-On(48,61
+Pt-On(49,59
+Pt-On(50,59
+Pt-On(51,59
+Pt-On(49,58
+Pt-On(48,56
+Pt-On(50,56
+Pt-On(47,60
+Pt-On(48,60
+Text(29,45,"O
+Text(29,37,"VV
+Text(29,49,"VV
+Text(22,37,"V
+Text(15,37,"VCCCV
+Text(8,37,"VVVVV
+Text(22,53,"V
+Text(40,25,"BELGAR'S SHOP"
+StorePic 9
+Lbl B
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 1
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+If R=234 and theta=105
+Goto 18
+If theta=105
+Goto S1
+Goto B
+Lbl 3
+0->theta
+3->Z
+ClrDraw
+PlotsOn 1
+Text(43,25,"VVVUVVV
+Text(50,25,"VVVVVVV
+Text(57,25,"VVVVVVV
+Text(1,17,"TTT
+Text(8,17,"TCT
+Text(15,17,"T    TT
+Text(22,17,"T
+Text(29,17,"TT
+Text(36,21,"TTTT
+Text(22,33,"VVUVV
+Text(15,33,"VVVVV
+Text(8,33,"VVVVV
+Text(1,33,"VVVVV
+prgmBATTLE
+Lbl C
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 7
+If theta=24
+Goto 1
+If theta=26
+Goto 17
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto C
+Lbl 4
+0->theta
+4->Z
+ClrDraw
+PlotsOn 1
+Text(43,33,"VVVUVVV
+Text(50,33,"VVVVVVV
+Text(57,33,"VVVVVVV
+Text(1,25,"TTT
+Text(8,25,"TCT
+Text(15,25,"T    TT
+Text(22,25,"T
+Text(29,25,"TT
+Text(36,29,"TTTT
+Text(22,41,"VVUVV
+Text(15,41,"VVVVV
+Text(8,41,"VVVVV
+Text(1,41,"VVVVV
+prgmBATTLE
+Lbl D
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 5
+If theta=26
+Goto 1
+If theta=24
+Goto 8
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto D
+Lbl 5
+0->theta
+5->Z
+ClrDraw
+PlotsOn 1
+Text(36,33,"VVVUVVV
+Text(43,33,"VVVVVVV
+Text(50,33,"VVVVVVV
+Text(57,33,"VVVVVVV
+Text(1,25,"TCT
+Text(8,25,"T    TT
+Text(15,25,"T
+Text(22,25,"TT
+Text(29,29,"TTTT
+Text(15,41,"VVUVV
+Text(8,41,"VVVVV
+Text(1,41,"VVVVV
+prgmBATTLE
+Lbl E
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 16
+If theta=26
+Goto 6
+If theta=25
+Goto 4
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto E
+Lbl 6
+0->theta
+6->Z
+ClrDraw
+PlotsOn 1
+Text(36,29,"VVVUVVV
+Text(43,29,"VVVVVVV
+Text(50,29,"VVVVVVV
+Text(57,29,"VVVVVVV
+Text(1,21,"TCT
+Text(8,21,"T    TT
+Text(15,21,"T
+Text(22,21,"TT
+Text(29,25,"TTTT
+Text(15,37,"VVUVV
+Text(8,37,"VVVVV
+Text(1,37,"VVVVV
+prgmBATTLE
+Lbl F
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=26
+Goto 7
+If theta=25
+Goto 1
+If theta=24
+Goto 5
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto F
+Lbl 7
+0->theta
+7->Z
+ClrDraw
+PlotsOn 1
+Text(36,25,"VVVUVVV
+Text(43,25,"VVVVVVV
+Text(50,25,"VVVVVVV
+Text(57,25,"VVVVVVV
+Text(1,17,"TCT
+Text(8,17,"T    TT
+Text(15,17,"T
+Text(22,17,"TT
+Text(29,21,"TTTT
+Text(15,33,"VVUVV
+Text(8,33,"VVVVV
+Text(1,33,"VVVVV
+prgmBATTLE
+Lbl G
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=25
+Goto 3
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+If theta=24
+Goto 6
+Goto G
+Lbl 8
+0->theta
+8->Z
+ClrDraw
+PlotsOn 1
+Text(43,37,"VVVUVVV
+Text(50,37,"VVVVVVV
+Text(57,37,"VVVVVVV
+Text(1,29,"TTT
+Text(8,29,"TCT
+Text(15,29,"T    TT
+Text(22,29,"T
+Text(29,29,"TT
+Text(36,33,"TTTT
+Text(22,45,"VVUVV
+Text(15,45,"VVVVV
+Text(8,45,"VVVVV
+Text(1,45,"VVVVV
+prgmBATTLE
+Lbl H
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=24
+Goto 9
+If theta=26
+Goto 4
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto H
+Lbl 9
+0->theta
+9->Z
+ClrDraw
+PlotsOn 1
+Text(43,41,"VVVUVVV
+Text(50,41,"VVVVVVV
+Text(57,41,"VVVVVVV
+Text(1,33,"TTT
+Text(8,33,"TCT
+Text(15,33,"T    TT
+Text(22,33,"T
+Text(29,33,"TT
+Text(36,37,"TTTT
+Text(22,49,"VVUVV
+Text(15,49,"VVVVV
+Text(8,49,"VVVVV
+Text(1,49,"VVVVV
+prgmBATTLE
+Lbl I
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=24
+Goto 15
+If theta=25
+Goto 10
+If theta=26
+Goto 8
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto I
+Lbl 10
+0->theta
+10->Z
+ClrDraw
+PlotsOn 1
+Text(50,41,"VVVUVVV
+Text(57,41,"VVVVVVV
+Text(8,33,"TTT
+Text(15,33,"TCT
+Text(22,33,"T    TT
+Text(29,33,"T
+Text(36,33,"TT
+Text(43,37,"TTTT
+Text(29,49,"VVUVV
+Text(22,49,"VVVVV
+Text(15,49,"VVVVV
+Text(8,49,"VVVVV
+prgmBATTLE
+Lbl J
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 9
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+If theta=24
+Goto 11
+If theta=105
+prgmCHEST
+Goto J
+Lbl 11
+0->theta
+11->Z
+ClrDraw
+PlotsOn 1
+Text(50,45,"VVVUVVV
+Text(57,45,"VVVVVVV
+Text(8,37,"TTT
+Text(15,37,"TCT
+Text(22,37,"T    TT
+Text(29,37,"T
+Text(36,37,"TT
+Text(43,41,"TTTT
+Text(29,53,"VVUVV
+Text(22,53,"VVVVV
+Text(15,53,"VVVVV
+Text(8,53,"VVVVV
+prgmBATTLE
+Lbl K
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 15
+If theta=24
+Goto 12
+If theta=26
+Goto 10
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto K
+Lbl 12
+0->theta
+12->Z
+ClrDraw
+PlotsOn 1
+Text(50,49,"VVVUVVV
+Text(57,49,"VVVVVVV
+Text(8,41,"TTT
+Text(15,41,"TCT
+Text(22,41,"T    TT
+Text(29,41,"T
+Text(36,41,"TT
+Text(43,45,"TTTT
+Text(29,57,"VVUVV
+Text(22,57,"VVVVV
+Text(15,57,"VVVVV
+Text(8,57,"VVVVV
+prgmBATTLE
+Lbl L
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=26
+Goto 11
+If theta=25
+Goto 13
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto L
+Lbl 13
+0->theta
+13->Z
+ClrDraw
+PlotsOn 1
+Text(57,49,"VVVUVVV
+Text(15,41,"TTT
+Text(22,41,"TCT
+Text(29,41,"T
+Text(29,49,"TT
+Text(36,41,"T
+Text(43,41,"TT
+Text(50,45,"TTTT
+Text(36,57,"VVUVV
+Text(29,57,"VVVVV
+Text(22,57,"VVVVV
+Text(15,57,"VVVVV
+prgmBATTLE
+Lbl M
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=25
+Goto 14
+If theta=34
+Goto 12
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto M
+Lbl 14
+0->theta
+14->Z
+ClrDraw
+PlotsOn 1
+Text(22,41,"TTT
+Text(29,41,"T
+Text(29,49,"T
+Text(36,41,"T    TT
+Text(43,41,"T
+Text(50,41,"TT
+Text(57,45,"TTTT
+Text(43,57,"VVUVV
+Text(36,57,"VVVVV
+Text(29,57,"VVVVV
+Text(22,57,"VVVVV
+prgmBATTLE
+Lbl N
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=34
+Goto 13
+If theta=105
+prgmCHEST
+If theta=2
+Goto 14
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto N
+Lbl 15
+0->theta
+15->Z
+ClrDraw
+PlotsOn 1
+Text(43,45,"VVVUVVV
+Text(50,45,"VVVVVVV
+Text(57,45,"VVVVVVV
+Text(1,37,"TTT
+Text(8,37,"TCT
+Text(15,37,"T    TT
+Text(22,37,"T
+Text(29,37,"TT
+Text(36,41,"TTTT
+Text(22,53,"VVUVV
+Text(15,53,"VVVVV
+Text(8,53,"VVVVV
+Text(1,53,"VVVVV
+prgmBATTLE
+Lbl O
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=26
+Goto 9
+If theta=25
+Goto 11
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto O
+Lbl 16
+0->theta
+16->Z
+ClrDraw
+PlotsOn 1
+Text(29,33,"VVV
+Text(29,49,"VVV
+Text(36,33,"V                    V
+Text(43,33,"V                    V
+Text(50,33,"VVVVVVV
+Text(15,23,"    WELGAR'S INN
+Pt-On(50,41
+Pt-On(49,42
+Pt-On(48,41
+Pt-On(49,39
+Pt-On(50,39
+Pt-On(51,39
+Pt-On(49,37
+Pt-On(48,36
+Pt-On(50,36
+Pt-On(48,39
+Pt-On(47,39
+Lbl P
+Line(100,0,100,((D/F)*100)
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta=25
+Goto 5
+If theta=105
+prgmINN
+If theta=5
+Goto 16
+If theta=21
+prgmMENU
+If theta=32
+Goto QG
+Goto P
+Lbl QG
+A->|LFLAME(1)
+B->|LFLAME(2)
+C->|LFLAME(3)
+D->|LFLAME(4)
+E->|LFLAME(5)
+F->|LFLAME(6)
+G->|LFLAME(7)
+Z->|LFLAME(8)
+R->|LFLAME(9)
+L->|LFLAME(10)
+If Str0="EASY"
+1->|LFLAME(12)
+If Str0="MEDIUM"
+2->|LFLAME(12)
+If Str0="HARD"
+3->|LFLAME(12)
+0->A
+DelVar B:DelVar C:DelVar D:DelVar E:DelVar F:DelVar G:DelVar Z:DelVar R:DelVar L
+Plot1(Scatter,L1,L2,plotsquare
+PlotsOff 
+ClrHome
+List>matr(|LFLAME,[A]
+Archive |LFLAME
+Archive [A]
+Archive |LCHAR
+Archive |LCHARtheta
+Output(1,1," 
+Stop
+Lbl S1
+PlotsOff 1
+Text(1,1,"BELGAR- 'AY, SOME PRETTY        
+Text(7,1,"WEIRD STUFF'S BEEN
+Text(13,1,"A'HAPPENIN' LATELY...'
+Text(19,1,"                                   
+Text(19,35,"                        
+
+Pause 
+PlotsOn 1
+ClrDraw
+Menu(" BELGAR'S SHOP ","BUY",B0,"SELL",S0,"TALK",T0,"LEAVE",2
+Lbl B0
+1->Y
+prgmBUY
+Goto 2
+Lbl S0
+1->Y
+prgmSELL
+Goto 2
+Lbl T0
+ClrDraw
+RecallPic 9
+PlotsOff 1
+Text(1,1,"BELGAR- 'AY, JUST A FEW DAYS
+Text(7,1,"AGO, SOME GUY IN A BLACK
+Text(13,1,"CLOAK CAME IN ASKING FOR
+Text(19,1,"SOMEONE NAMED           
+Text(25,1,Str1,"          
+Text(31,1,"I TOLD HIM I THOUGHT YOU
+Text(37,1,"WERE OUTSIDE TRAINING, AND
+Text(43,1,"THEN HE STORMED OUT OF HERE
+Text(49,1,"RAVING ABOUT SOME STONE'
+Pause 
+PlotsOn 1
+Goto 2

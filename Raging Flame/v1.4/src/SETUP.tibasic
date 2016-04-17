@@ -1,0 +1,25 @@
+:"SETUP RAGING FLAME
+ClrHome
+Disp "INSTALLING...
+For(theta,1,200
+End
+0->|LFLAME(1)
+0->|LFLAME(2)
+0->|LFLAME(3)
+0->|LFLAME(4)
+0->|LFLAME(5)
+0->|LFLAME(6)
+0->|LFLAME(7)
+0->|LFLAME(8)
+0->|LFLAME(9)
+0->|LFLAME(10)
+0->|LFLAME(11)
+0->|LFLAME(12)
+0->|LFLAME(13)
+1->|LFLAME(14)
+0->|LFLAME(15)
+0->|LFLAME(16)
+0->|LFLAME(17)
+ClrHome
+Disp "DONE
+Output(1,5," 

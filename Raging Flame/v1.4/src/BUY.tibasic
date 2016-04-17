@@ -1,0 +1,34 @@
+ClrHome
+Lbl 1
+ClrHome
+Menu("       BUY      ","POTION",A,"RETURN",thetatheta
+Lbl A
+ClrHome
+Disp "POTION- 50 GOLD","RESTORES 10 HP"
+Pause 
+ClrHome
+Menu("     POTION     ","BUY",B1,"CANCEL",1
+Lbl B1
+ClrHome
+If E<50
+Goto N1
+If |LFLAME(16)=1
+Goto C1
+E-50->E
+1->|LFLAME(16)
+ClrHome
+Disp "YOU NOW HAVE ",E,"GOLD"
+Pause 
+Goto thetatheta
+Lbl C1
+ClrHome
+Disp "NOT ENOUGH SPACE"
+Pause 
+Goto thetatheta
+Lbl N1
+ClrHome
+Disp "YOU DON'T HAVE","ENOUGH MONEY"
+Pause 
+Goto thetatheta
+Lbl thetatheta
+Return

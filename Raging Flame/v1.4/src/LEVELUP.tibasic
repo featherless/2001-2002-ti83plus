@@ -1,0 +1,123 @@
+If L>=1 and L<=99
+Goto Ltheta
+Return
+If A=0
+Return
+Lbl Ltheta
+If Str9="WARRIOR":Then
+	Lbl L1
+	1+L->L
+	If L=2
+	150->G
+	If L=3
+	160->G
+	If L=4:Then
+		C+1->C
+		170->G
+	End
+	If L=5
+	180->G
+	If L=6
+	190->G
+	If L=7
+	200->G
+	If L=8
+	210->G
+	If L=9:Then
+		C+1->C
+		220->G
+	End
+	If L=10
+	230->G
+	If L=11
+	240->G
+	If L=12
+	250->G
+	If L=13:Then
+		260->G
+		C+1->C
+	End
+	If L=14
+	270->G
+	If L=15
+	280->G
+	If L=16
+	290->G
+	If L=17
+	300->G
+	If L=18:Then
+		310->G
+		C+1->C
+	End
+	If L=19
+	320->G
+	If L=20
+	330->G
+End
+If Str9="WIZARD":Then
+	1+L->L
+	If L=2
+	100->G
+	If L=3
+	110->G
+	If L=4:Then
+		120->G
+		C+1->C
+	End
+	If L=5
+	130->G
+	If L=6
+	140->G
+	If L=7
+	150->G
+	If L=8
+	160->G
+	If L=9:Then
+		170->G
+		C+1->C
+	End
+	If L=10
+	180->G
+	If L=11
+	180->G
+	If L=12
+	190->G
+	If L=13
+	200->G
+	If L=14
+	210->G
+	If L=15:Then
+		220->G
+		C+1->C
+	End
+	If L=16
+	230->G
+	If L=17
+	240->G
+	If L=18
+	250->G
+	If L=19
+	260->G
+	If L=20
+	270->G
+End
+ClrHome
+0->theta
+Lbl G1
+theta+1->theta
+Disp "LEVEL UP
+Disp "        
+If theta=15
+Goto H1
+Goto G1
+Lbl H1
+ClrHome
+Disp "YOU ARE NOW AT","LEVEL
+Output(2,7,L
+Pause 
+A+1->A
+B+1->B
+E+30->E
+D+3->D
+F+3->F
+Return

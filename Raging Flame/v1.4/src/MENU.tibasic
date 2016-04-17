@@ -1,0 +1,238 @@
+StorePic 9
+0->theta
+ClrDraw:ClrHome
+If Q=500
+Goto CM
+Goto NM
+Lbl CM
+"CHEATER"->Str1
+Menu("   CHEAT MENU   ","CHANGE STATS",CS,"NORMAL MENU",NM
+Lbl CS
+Menu("  CHANGE STATS  ","HEALTH",CH,"ATTACK",CA,"GOLD",CG
+Lbl CG
+ClrHome:ClrDraw
+Text(1,1,"GOLD IS- ",E
+Pause 
+Input "NEW GOLD- ",E
+Text(7,1,"NEW GOLD IS- ",E
+Pause 
+Goto GB
+Lbl CA
+ClrDraw:ClrHome
+Text(1,1,"ATTACK IS- ",A
+Pause 
+Input "NEW ATTACK- ",A
+If A>100
+100->A
+Text(7,1,"NEW ATTACK IS- ",A
+Pause 
+Goto GB
+Lbl CH
+ClrDraw:ClrHome
+Text(1,1,"HEALTH IS- ",D,"/",F
+Pause 
+Input "NEW MAX- ",F
+Input "NEW NORM- ",D
+If D>F
+F->D
+If D>300 or F>300:Then
+	Pause "BE REALISTIC"
+	20->D
+	20->F
+	Goto CH
+End
+
+Text(7,1,"NEW HEALTH IS- ",D,"/",F
+Pause 
+Goto GB
+
+Lbl NM
+Menu("  RAGING FLAME  ","STATS",ST,"ITEMS",EQ,"CONFIG",CD,"GO BACK",GB,"POWER OFF",PO,"SAVE AND QUIT",QU,"CREDITS",CR
+Lbl CR
+A->|LCRED(1)
+B->|LCRED(2)
+C->|LCRED(3)
+D->|LCRED(4)
+E->|LCRED(5)
+F->|LCRED(6)
+G->|LCRED(7)
+H->|LCRED(8)
+I->|LCRED(9)
+J->|LCRED(10)
+6->A
+10->B
+11->C
+13->D
+14->E
+16->F
+17->G
+19->H
+20->I
+22->J
+Lbl 1theta
+A-1->A
+B-1->B
+C-1->C
+D-1->D
+E-1->E
+F-1->F
+G-1->G
+H-1->H
+I-1->I
+J-1->J
+ClrHome
+Disp "","","R","A","G","I","N","G"
+Output(3,16,"F
+Output(4,16,"L
+Output(5,16,"A
+Output(6,16,"M
+Output(7,16,"E
+If A>0 and A<6
+Output(A,3,"RAGING FLAME
+If A<=4 and B<=9 and B>=1
+Output(B,2,"PROGRAMMED BY:
+If A<=3 and C<=8 and C>=1
+Output(C,2,"JEFF VERKOEYEN
+If A<=1 and D<=8 and D>=1
+Output(D,4,"TITLE BY:
+If B<=4 and E<=8 and E>=1
+Output(E,3,"BRENT AMMANN
+If B<=3 and F<=8 and F>=1
+Output(F,2,"PLOT EDITED BY
+If B<=1 and G<=8 and G>=1
+Output(G,2,"BROOKS BUTLER
+If B<=~1 and H<=8 and H>=1
+Output(H,3,"PICTURES BY:
+If B<=~2 and I<=8 and I>=1
+Output(I,3,"JOSH RODASTI
+If B<=~4 and J<=8 and J>=1
+Output(J,3,"V1.4 10/19/01
+If J=3:Then
+	|LCRED(1)->A
+	|LCRED(2)->B
+	|LCRED(3)->C
+	|LCRED(4)->D
+	|LCRED(5)->E
+	|LCRED(6)->F
+	|LCRED(7)->G
+	|LCRED(8)->H
+	|LCRED(9)->I
+	|LCRED(10)->J
+	ClrHome
+	Disp "ALL OF THE","PEOPLE ABOVE ARE","9TH GRADERS AND","RAGING FLAME HAS","BEEN IN","PRODUCTION FOR 1","MONTH
+	Pause 
+	Goto GB
+End
+For(theta,1,100
+End
+Goto 1theta
+Lbl CD
+ClrHome
+Menu("    CONFIG.     ","DIFFICULTY",CE,"CHANGE TITLE",CT,"OPTIONS",CO,"GO BACK",NM
+Lbl CO
+ClrHome
+Lbl Ctheta
+Asm(prgmZALPHA
+Input "BATTLE SCEEN- ",Str8
+If Str8="YES"
+1->|LFLAME(15)
+If Str8="NO"
+2->|LFLAME(15)
+If Str8!="NO" and Str8!="YES":Then
+	ClrHome
+	Disp "YES OR NO!!
+	Goto Ctheta
+End
+ClrHome
+Goto CD
+Lbl CT
+1->|LFLAME(14)
+ClrHome
+Pause "DONE
+Goto GB
+Lbl CE
+Menu("   DIFFICULTY   ","EASY",DL,"MEDIUM",LD,"HARD",LO,"CANCEL",GB
+Lbl DL
+"EASY"->Str0
+Goto GB
+Lbl LD
+"MEDIUM"->Str0
+Goto GB
+Lbl LO
+"HARD"->Str0
+Goto GB
+Lbl EQ
+ClrHome
+If |LFLAME(16)=0
+Goto NO
+Menu("   EQUIPMENT    ","POTION",AB,"BACK",GB
+Lbl NO
+Pause "YOU HAVE NOTHING"
+Goto GB
+Lbl AB
+If Str2="POTION"
+Goto I0
+Lbl I0
+ClrHome
+Disp "POTION- RESTORES","10 HP"
+Pause 
+Menu("     POTION     ","USE",U0,"CANCEL",GB
+Lbl U0
+"NONE"->Str2
+0->|LFLAME(16)
+D+10->D
+If D>F
+F->D
+ClrHome
+Disp "YOUR HP IS"
+Output(1,12,D
+Pause 
+Goto GB
+Lbl PO
+Asm(prgmSHUTDOWN
+ClrHome
+Output(2,1,"YYYY          "
+Output(3,1,""""    ."
+Output(5,1,"RRRRRRRRR
+Output(6,1,"""""""   
+Output(7,1,"""""""""".
+getKey->theta
+While theta=0
+	getKey->theta
+End
+If theta<0
+ClrHome 
+Lbl P1
+sqrt(pi)-.02->theta
+Input "",P
+If P=59:Then
+	Output(1,1," 
+	Stop
+End
+If P=sqrt(pi)-.02
+Goto GB
+If P=78963214
+Goto PO
+If P=41236987
+Goto QU
+Pause P
+Goto P1
+Lbl ST
+Text(1,17,"STATS FOR ",Str1
+Text(7,1,"HEALTH- ",D,"/",F
+Text(13,1,"ATTACK- ",A,"/100"
+Text(19,1,"DEFENSE- ",B,"/100"
+Text(25,1,"SPEED- ",C,"/4"
+Text(31,1,"GOLD- ",E
+Text(37,1,"EXPERIENCE LEFT- ",G
+Text(43,1,"LEVEL- ",L
+Text(50,1,"RACE- ",Str9
+Pause 
+ClrDraw:RecallPic 9
+Return
+Lbl GB
+ClrDraw:RecallPic 9
+Return
+Lbl QU
+32->theta
+Return

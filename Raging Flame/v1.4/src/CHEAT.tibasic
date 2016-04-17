@@ -1,0 +1,25 @@
+:"CHEAT RAGING FLAME
+
+ClrHome
+Disp "CHEAT PROGRAM","FOR RAGING FLAME","V1.3"
+Pause 
+ClrHome
+If Q=500
+Pause "PRGM IS RUNNING"
+Menu("CHEAT MENU","ENABLE",1,"DISABLE",2,"QUIT",QU
+Lbl QU
+ClrHome
+Return
+Lbl 1
+ClrHome
+Disp "CHEAT PRGM IS","NOW RUNNING
+Pause 
+"CHEATER"->Str1
+500->Q
+Return
+Lbl 2
+ClrHome
+Disp "CHEAT PROGRAM","DISABLED"
+Pause 
+0->Q
+Return

@@ -1,0 +1,322 @@
+If R=998
+Goto WI
+StorePic 9
+randInt(1,25)->W
+If Str0="EASY":Then
+	If W=1
+	Goto A
+	If W>=2
+	Return
+End
+If Str0="MEDIUM":Then
+	If W<=5
+	Goto A
+	If W>=6
+	Return
+End
+If Str0="HARD":Then
+	If W<=12
+	Goto A
+	If W>=13
+	Return
+End
+Lbl A
+If |LFLAME(15)=2
+Goto RP
+For(theta,1,30
+	Text(30-theta,32,"BATTLE!
+	Text(26+theta,32,"BATTLE!
+	Text(30-theta,32+theta,"BATTLE!
+	Text(26+theta,32+theta," BATTLE!
+	Text(30-theta,32-theta,"BATTLE!
+	Text(26+theta,32-theta,"BATTLE!
+	Text(30,32+theta," BATTLE!
+	Text(30,32-theta,"BATTLE!
+End
+Pause 
+Lbl RP
+ClrHome:ClrDraw
+PlotsOff 1
+If L>3:Then
+	randInt(1,3)->W
+	If W=1
+	Goto DE
+	If W=2
+	Goto GR
+	If W=3
+	Goto TR
+End
+randInt(1,2)->W
+If W=1
+Goto TR
+If W=2
+Goto GR
+Lbl WI
+100->H
+Lbl W1
+ClrDraw
+"WIZARD"->Str3
+Text(1,1,"WIZARD- ",H,"/","100
+Text(7,1,Str1,"- ",D,"/",F
+Line(100,0,100,((D/F)*100)
+Pause 
+41->theta
+Menu("     BATTLE     ","ATTACK",W2,"STATS",T3,"ITEM",Ttheta,"RUN",T4
+Lbl W2
+ClrHome
+If H<=0
+Goto W7
+Pause "YOU ATTACK!
+ClrHome
+Disp "YOU DID
+Output(1,9,A
+Pause "DAMAGE
+H-A->H
+If H<=0
+Goto D7
+Lbl W6
+ClrHome
+Pause "WIZARD ATTACKS...
+ClrHome
+Disp "WIZARD DID","20 DAMAGE
+D-20->D
+Pause 
+If D<=0
+Return
+Goto W1
+Lbl W7
+Pause "YOU WON!
+ClrHome
+0->G
+E+200->E
+prgmLEVELUP
+0->G
+prgmLEVELUP
+0->G
+prgmLEVELUP
+1245->theta
+ClrHome
+Return
+Lbl DE
+34->H
+Lbl D1
+ClrDraw
+"DEMON"->Str3
+Text(1,1,"DEMON- ",H,"/","34
+Text(7,1,Str1,"- ",D,"/",F
+Line(100,0,100,((D/F)*100)
+Pause 
+40->theta
+Menu("     BATTLE     ","ATTACK",D2,"STATS",T3,"ITEM",Ttheta,"RUN",T4
+Lbl D2
+ClrHome
+If H<=0
+Goto D7
+Pause "YOU ATTACK!
+ClrHome
+Disp "YOU DID"
+Output(1,9,A
+Pause "DAMAGE
+H-A->H
+If H<=0
+Goto D7
+Lbl D6
+ClrHome
+Pause "DEMON ATTACKS...
+ClrHome
+Disp "DEMON DID","5 DAMAGE
+D-5->D
+Pause 
+If D<=0
+Goto Ltheta
+Goto D1
+Lbl D7
+Pause "YOU WON!
+ClrHome
+G-20->G
+E+10->E
+If G<=0
+prgmLEVELUP
+1245->theta
+PlotsOn 1
+RecallPic 9
+Return
+Lbl GR
+23->H
+Lbl G1
+ClrDraw
+"GREMLIN"->Str3
+Text(1,1,Str3,"- ",H,"/","23"
+Text(8,1,Str1,"- ",D,"/",F
+Line(100,0,100,((D/F)*100)
+Pause 
+39->theta
+Menu("     BATTLE     ","ATTACK",G2,"STATS",T3,"ITEM",Ttheta,"RUN",T4
+Lbl G2
+ClrHome
+If H<=0
+Goto G7
+Pause "YOU ATTACK!
+ClrHome
+Disp "YOU DID"
+Output(1,9,A
+Disp "DAMAGE
+Pause 
+H-A->H
+If H<=0
+Goto G7
+Lbl G6
+ClrHome
+Pause "GREMLIN ATTACKS...
+ClrHome
+Disp "GREMLIN DID","3 DAMAGE
+D-3->D
+Pause 
+If D<=0
+Goto Ltheta
+Goto G1
+Lbl G7
+ClrHome
+Pause "YOU WON!
+ClrHome
+G-13->G
+E+5->E
+If G<=0
+prgmLEVELUP
+1245->theta
+PlotsOn 1
+RecallPic 9
+Return
+Lbl TR
+20->H
+ClrDraw
+RecallPic 3
+Pause 
+Lbl T1
+ClrDraw
+"GHOST"->Str3
+Text(1,1,"GHOST- ",H,"/","20"
+Text(8,1,Str1,"- ",D,"/",F
+Line(100,0,100,((D/F)*100)
+Pause 
+38->theta
+Menu("     BATTLE     ","ATTACK",T2,"STATS",T3,"ITEM",Ttheta,"RUN",T4
+Lbl Ttheta
+If |LFLAME(16)=0
+Goto NI
+Menu("      ITEM      ","POTION",P1,"GO BACK",K1
+Lbl P1
+D+10->D
+If D>F
+F->D
+0->|LFLAME(16)
+Disp "HP IS",D
+Pause 
+Lbl K1
+If Str3="GHOST"
+Goto T1
+If Str3="WIZARD"
+Goto W1
+If Str3="DEMON"
+Goto D1
+If Str3="GREMLIN"
+Goto G1
+Lbl NI
+ClrHome
+Pause "NO ITEMS
+If Str3="GHOST"
+Goto T1
+If Str3="GREMLIN"
+Goto G1
+If Str3="DEMON"
+Goto D1
+If Str3="WIZARD"
+Goto W1
+Lbl T2
+ClrHome
+If H<=0
+Goto T7
+Pause "YOU ATTACK!
+ClrHome
+Disp "YOU DID"
+Output(1,9,A
+Disp "DAMAGE"
+Pause 
+H-A->H
+If H<=0
+Goto T7
+Lbl T6
+ClrHome
+Pause "GHOST ATTACKS..."
+ClrHome
+Disp "GHOST DID 2","DAMAGE"
+D-2->D
+Pause 
+If D<=0
+Goto Ltheta
+Goto T1
+Lbl T7
+ClrHome
+Pause "YOU WON!
+ClrHome
+G-8->G
+E+8->E
+If G<=0
+prgmLEVELUP
+1245->theta
+PlotsOn 1
+RecallPic 9
+Return
+Lbl Ltheta
+Pause "YOU LOST"
+ClrDraw
+Text(1,1,"YOU FAILED TO DESTROY THE
+Text(7,1,"THE EVIL WIZARD, BOTH
+Text(13,1,"WORLDS HAVE NOW BEEN
+Text(19,1,"DESTROYED!"
+Pause 
+ClrHome
+Output(1,1," 
+Stop
+Lbl T3
+ClrHome:ClrDraw
+Text(1,17,"STATS FOR ",Str1
+Text(7,1,"HEALTH- ",D,"/",F
+Text(13,1,"ATTACK- ",A,"/100"
+Text(19,1,"DEFENSE- ",B,"/100"
+Text(25,1,"SPEED- ",C,"/4"
+Text(31,1,"GOLD- ",E
+Text(37,1,"EXPERIENCE LEFT- ",G
+Text(43,1,"LEVEL- ",L
+Text(50,1,"RACE- ",Str9
+Pause 
+If theta=39
+Goto G1
+If theta=38
+Goto T1
+If theta=40
+Goto D1
+If theta=41
+Goto W1
+Lbl T4
+ClrHome
+1245->theta
+randInt(1,4)->W
+If W>C
+Goto T5
+If W<=C:Then
+	PlotsOn 1
+	RecallPic 9
+	Return
+End
+Lbl T5
+ClrHome
+Pause "YOU COULDN'T RUN"
+If Str3="GREMLIN"
+Goto G6
+If Str3="GHOST"
+Goto T6
+If Str3="DEMON"
+Goto D6
+If Str3="WIZARD"
+Goto W6

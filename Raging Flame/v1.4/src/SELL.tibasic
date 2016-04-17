@@ -1,0 +1,28 @@
+ClrHome
+Lbl 1
+ClrHome
+If |LFLAME(16)=0
+Goto CS
+Menu("      SELL      ","POTION",A,"RETURN",thetatheta
+Lbl CS
+Pause "NOTHING TO SELL"
+Goto thetatheta
+Lbl A
+ClrHome
+If |LFLAME(16)=1
+Goto thetaZ
+Lbl thetaZ
+ClrHome
+Menu("  SELL POTION?  ","YES",S1,"NO",thetatheta,"INFO",I1
+Lbl S1
+0->|LFLAME(16)
+E+30->E
+Pause "POTION SOLD"
+Goto thetatheta
+Lbl I1
+ClrHome
+Disp "POTION- RESTORES","10 HP","WORTH 30 GOLD"
+Pause 
+Goto thetaZ
+Lbl thetatheta
+Return
