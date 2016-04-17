@@ -60,6 +60,15 @@ evil wizard.
 
 [View the source](Raging Flame/).
 
+Development of the TI83+ version of the game ended in early 2003 due to my computer's hard drive
+being wiped out:
+
+> One note on the bad-side, about 6 or 7 months ago, my computer's harddrive was wiped, therefor
+> clearing every single one of the calculator programs that I've ever created, so I lost most of the
+> new Raging Flame engine and such, but most of the stuff is recreatable, I just haven't really had
+> the will to do so recently, and I'm also developing video games for the computer now, so I guess
+> I've moved on, heh.
+
 ### Raging Flame 2: Legend of Krynn
 
 - When: February 2002
