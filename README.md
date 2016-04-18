@@ -29,6 +29,8 @@ My profile:
 
 # Games
 
+> Note: https://www.cemetech.net/sc/ provides a TI83+ emulator.
+
 ## Keldfolc
 
 - When: May 2001
