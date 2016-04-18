@@ -29,15 +29,41 @@ My profile:
 
 # Games
 
-## Tileflip
+## Keldfolc
 
-- When: November 2001
+- When: May 2001
 
-TileFlip is a remake of the game BeJeweled.
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/kelfol1.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/keldfol1.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/keldfol2.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/keldfol3.gif)
 
-[View the source](tileflip/).
+## Guess the Number
 
-![Screenshot](tileflip/video.gif)
+- When: October 2001
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/guess.gif)
+
+## Poker
+
+- When: December 2001
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/poker.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/poker1.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/poker2.gif)
+
+## HitShot
+
+- When: February 2002
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/hitshot.gif)
+
+## Roidian
+
+- When: March 2002
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/roidian.gif)
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/rodian2.gif)
 
 ## Epic
 
@@ -131,6 +157,28 @@ A "promotional demo" of a rapid-fire RPG concept.
 ![Screenshot](rfrpg/shoot.gif)
 
 ![Screenshot](rfrpg/video.gif)
+
+## Arcade
+
+- When: March 2002
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/arcade.gif)
+
+## Memory
+
+- When: November 2002
+
+![Screenshot](https://raw.githubusercontent.com/featherless/ti83plus-site/master/src/images/memory.gif)
+
+## Tileflip
+
+- When: November 2002
+
+TileFlip is a remake of the game BeJeweled.
+
+[View the source](tileflip/).
+
+![Screenshot](tileflip/video.gif)
 
 # License
 
